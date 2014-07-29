@@ -21,12 +21,12 @@ function [] = plot_grapher( graph_times, graph_type, units, input_title )
 % frames, as well as all the frames you ask for in graph_times.
 
 % VARIABLES THAT CAN BE MESSED WITH
-verbosity = false; % Prints steps as running if true
+verbosity = 1; % Prints steps as running if true
 LINEWIDTH = 1.5; % 0.5 is the MATLAB default
 TITLE_SIZE = 24; % Fontsize
 AXIS_LABEL_SIZE = 17; % Fontize
 LEGEND_SIZE = 14; %Fontsize
-LEGEND_LOCATION = 'SouthEast'; %Where on the graph the legend goes
+%LEGEND_LOCATION = 'SouthEast'; %Where on the graph the legend goes
 % Redimensionalization constants (ex: t * T_DIM = dimensionalized time)
 T_DIM = 67.0; % time, in seconds 
 R_DIM = 3.0; % radius, in cm
@@ -40,9 +40,11 @@ num_times = length(graph_times);
 if (strcmpi(graph_type,'height'))
     make_height_profile = true;
     make_surf_profile = false;
+    LEGEND_LOCATION = 'NorthEast'; %Where on the graph the legend goes
 else
     make_height_profile = false;
     make_surf_profile = true;
+    LEGEND_LOCATION = 'SouthEast'; %Where on the graph the legend goes
 end
 
 % Check if want to redimensionalize (default use seconds)
