@@ -11,3 +11,5 @@ or just run
 plot_maker_short.m
 
 The rest of the files are needed to run plot_maker. I've once gotten an error because tnf.m (which contains the total number of frames) wasn't updated properly. If for whatever reason, plot_maker is getting stuck after a specific frame, make sure tnf contains the correct number.
+
+important_graphs contains plots of both the multilayer and experimental equation of state, as well as many surfactant and height profiles graphed in matlab using plot_grapher.m. 
